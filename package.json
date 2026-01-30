@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm -r build",
     "changeset": "changeset",
-    "lint": "pnpm -r lint",
+    "lint": "pnpm -r --if-present lint",
     "release": "changeset publish",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
