@@ -1,5 +1,11 @@
 # @signal-ui/tsconfig
 
+## 0.1.3
+
+### Patch Changes
+
+- 373e79d: Changes
+
 ## 0.1.2
 
 ### Patch Changes

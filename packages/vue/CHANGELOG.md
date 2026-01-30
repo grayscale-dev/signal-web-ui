@@ -1,5 +1,13 @@
 # @signal-ui/vue
 
+## 0.1.3
+
+### Patch Changes
+
+- 373e79d: Changes
+- Updated dependencies [373e79d]
+  - @signal-ui/core@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
