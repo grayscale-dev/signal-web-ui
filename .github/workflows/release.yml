@@ -24,7 +24,7 @@ jobs:
           cache: pnpm
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
           version: 10.28.2
 
@@ -38,11 +38,15 @@ jobs:
         run: pnpm test
 
       - name: Publish (manual)
-        if: ${{ inputs.publish == 'true' && secrets.NPM_TOKEN != '' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm release
-
-      - name: Publish skipped
-        if: ${{ inputs.publish != 'true' || secrets.NPM_TOKEN == '' }}
-        run: echo "Publish disabled. Set inputs.publish=true and add NPM_TOKEN to enable."
+        run: |
+          if [ "${{ inputs.publish }}" != "true" ]; then
+            echo "Publish disabled. Set inputs.publish=true to enable."
+            exit 0
+          fi
+          if [ -z "${NODE_AUTH_TOKEN}" ]; then
+            echo "NPM_TOKEN not set. Skipping publish."
+            exit 0
+          fi
+          pnpm release
