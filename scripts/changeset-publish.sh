@@ -16,4 +16,6 @@ if ! npm org ls signal-ui >/dev/null 2>&1; then
   exit 0
 fi
 
+pnpm build
+pnpm test
 pnpm release
