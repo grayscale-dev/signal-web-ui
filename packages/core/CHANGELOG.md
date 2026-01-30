@@ -1,5 +1,11 @@
 # @signal-web-ui/core
 
+## 0.1.7
+
+### Patch Changes
+
+- 8a30f05: refactor: update CSS imports and clean up dependencies
+
 ## 0.1.6
 
 ### Patch Changes
