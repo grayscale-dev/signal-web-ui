@@ -1,4 +1,4 @@
-# signal-ui repo export
+# signal-web-ui repo export
 
 This directory contains everything needed to run the Signal UI monorepo.
 

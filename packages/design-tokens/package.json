@@ -1,5 +1,5 @@
 {
-  "name": "@signal-ui/design-tokens",
+  "name": "@signal-web-ui/design-tokens",
   "version": "0.1.4",
   "private": true,
   "type": "module",
@@ -19,7 +19,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@signal-ui/tsconfig": "workspace:*",
+    "@signal-web-ui/tsconfig": "workspace:*",
     "@types/node": "^22.19.7",
     "vitest": "^2.1.4"
   }

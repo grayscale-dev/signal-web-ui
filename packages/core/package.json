@@ -1,21 +1,21 @@
 {
-  "name": "@signal-ui/core",
+  "name": "@signal-web-ui/core",
   "version": "0.1.4",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/signal-ui/signal-ui.git",
+    "url": "https://github.com/signal-web-ui/signal-web-ui.git",
     "directory": "packages/core"
   },
-  "homepage": "https://github.com/signal-ui/signal-ui",
+  "homepage": "https://github.com/signal-web-ui/signal-web-ui",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
   "collection": "./dist/collection/collection-manifest.json",
   "collection:main": "./dist/collection/index.js",
-  "unpkg": "./dist/signal-ui/signal-ui.js",
-  "jsdelivr": "./dist/signal-ui/signal-ui.js",
+  "unpkg": "./dist/signal-web-ui/signal-web-ui.js",
+  "jsdelivr": "./dist/signal-web-ui/signal-web-ui.js",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
@@ -58,10 +58,10 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@signal-ui/design-tokens": "workspace:*"
+    "@signal-web-ui/design-tokens": "workspace:*"
   },
   "devDependencies": {
-    "@signal-ui/tsconfig": "workspace:*",
+    "@signal-web-ui/tsconfig": "workspace:*",
     "@stencil/angular-output-target": "^1.3.0",
     "@stencil/core": "^4.20.0",
     "@stencil/react-output-target": "^1.4.0",

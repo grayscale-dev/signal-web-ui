@@ -1,14 +1,14 @@
 {
-  "name": "@signal-ui/react",
+  "name": "@signal-web-ui/react",
   "version": "0.1.4",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/signal-ui/signal-ui.git",
+    "url": "https://github.com/signal-web-ui/signal-web-ui.git",
     "directory": "packages/react"
   },
-  "homepage": "https://github.com/signal-ui/signal-ui",
+  "homepage": "https://github.com/signal-web-ui/signal-web-ui",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -40,7 +40,7 @@
     "test": "pnpm run typecheck"
   },
   "dependencies": {
-    "@signal-ui/core": "workspace:*",
+    "@signal-web-ui/core": "workspace:*",
     "@stencil/react-output-target": "^1.4.0"
   },
   "peerDependencies": {
@@ -48,7 +48,7 @@
     "react-dom": ">=17.0.0"
   },
   "devDependencies": {
-    "@signal-ui/tsconfig": "workspace:*",
+    "@signal-web-ui/tsconfig": "workspace:*",
     "@types/node": "^22.19.7",
     "@types/react": "^18.3.6",
     "@types/react-dom": "^18.3.1",

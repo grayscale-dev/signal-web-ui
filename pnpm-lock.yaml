@@ -23,14 +23,14 @@ importers:
       '@angular/core':
         specifier: '>=12.0.0'
         version: 21.1.2(rxjs@7.8.2)
-      '@signal-ui/core':
+      '@signal-web-ui/core':
         specifier: workspace:*
         version: link:../core
       rxjs:
         specifier: ^7.8.1
         version: 7.8.2
     devDependencies:
-      '@signal-ui/tsconfig':
+      '@signal-web-ui/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':
@@ -42,11 +42,11 @@ importers:
 
   packages/core:
     dependencies:
-      '@signal-ui/design-tokens':
+      '@signal-web-ui/design-tokens':
         specifier: workspace:*
         version: link:../design-tokens
     devDependencies:
-      '@signal-ui/tsconfig':
+      '@signal-web-ui/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@stencil/angular-output-target':
@@ -85,7 +85,7 @@ importers:
 
   packages/design-tokens:
     devDependencies:
-      '@signal-ui/tsconfig':
+      '@signal-web-ui/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':
@@ -100,7 +100,7 @@ importers:
       '@ember/render-modifiers':
         specifier: ^2.1.0
         version: 2.1.0(@babel/core@7.28.6)(ember-source@6.10.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
-      '@signal-ui/core':
+      '@signal-web-ui/core':
         specifier: workspace:*
         version: link:../core
       ember-auto-import:
@@ -152,7 +152,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@signal-ui/core':
+      '@signal-web-ui/core':
         specifier: workspace:*
         version: link:../core
       '@stencil/react-output-target':
@@ -165,7 +165,7 @@ importers:
         specifier: '>=17.0.0'
         version: 19.2.4(react@19.2.4)
     devDependencies:
-      '@signal-ui/tsconfig':
+      '@signal-web-ui/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':
@@ -185,14 +185,14 @@ importers:
 
   packages/vue:
     dependencies:
-      '@signal-ui/core':
+      '@signal-web-ui/core':
         specifier: workspace:*
         version: link:../core
       '@stencil/vue-output-target':
         specifier: ^0.13.0
         version: 0.13.0(@stencil/core@4.41.3)(vue@3.5.27(typescript@5.9.3))
     devDependencies:
-      '@signal-ui/tsconfig':
+      '@signal-web-ui/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':

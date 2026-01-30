@@ -7,8 +7,8 @@
 
 /* eslint-disable */
 
-import { type SignalComboboxCustomEvent } from "@signal-ui/core";
-import { SignalCombobox as SignalComboboxElement, defineCustomElement as defineSignalCombobox } from "@signal-ui/core/dist/custom-elements/signal-combobox.js";
+import { type SignalComboboxCustomEvent } from "@signal-web-ui/core";
+import { SignalCombobox as SignalComboboxElement, defineCustomElement as defineSignalCombobox } from "@signal-web-ui/core/dist/custom-elements/signal-combobox.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

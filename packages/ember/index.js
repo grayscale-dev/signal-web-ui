@@ -1,5 +1,5 @@
 "use strict";
 
 module.exports = {
-  name: "@signal-ui/ember"
+  name: "@signal-web-ui/ember"
 };

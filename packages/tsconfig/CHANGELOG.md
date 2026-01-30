@@ -1,4 +1,4 @@
-# @signal-ui/tsconfig
+# @signal-web-ui/tsconfig
 
 ## 0.1.4
 

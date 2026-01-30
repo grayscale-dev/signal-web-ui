@@ -1,5 +1,5 @@
 {
-  "extends": "@signal-ui/tsconfig/library",
+  "extends": "@signal-web-ui/tsconfig/library",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "src",
@@ -10,8 +10,8 @@
     "target": "ES2019",
     "moduleResolution": "Bundler",
     "paths": {
-      "@signal-ui/core/dist/custom-elements": ["../core/dist/custom-elements/index.d.ts"],
-      "@signal-ui/core/dist/custom-elements/*": ["../core/dist/custom-elements/*"]
+      "@signal-web-ui/core/dist/custom-elements": ["../core/dist/custom-elements/index.d.ts"],
+      "@signal-web-ui/core/dist/custom-elements/*": ["../core/dist/custom-elements/*"]
     }
   },
   "include": ["src"]

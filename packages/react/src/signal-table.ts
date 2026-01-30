@@ -7,8 +7,8 @@
 
 /* eslint-disable */
 
-import { type SignalTableCustomEvent } from "@signal-ui/core";
-import { SignalTable as SignalTableElement, defineCustomElement as defineSignalTable } from "@signal-ui/core/dist/custom-elements/signal-table.js";
+import { type SignalTableCustomEvent } from "@signal-web-ui/core";
+import { SignalTable as SignalTableElement, defineCustomElement as defineSignalTable } from "@signal-web-ui/core/dist/custom-elements/signal-table.js";
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

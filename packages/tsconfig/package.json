@@ -1,5 +1,5 @@
 {
-  "name": "@signal-ui/tsconfig",
+  "name": "@signal-web-ui/tsconfig",
   "version": "0.1.4",
   "private": true,
   "files": [

@@ -1,1 +1,1 @@
-export { default } from "@signal-ui/ember/components/signal-modal";
+export { default } from "@signal-web-ui/ember/components/signal-modal";

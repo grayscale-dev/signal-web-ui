@@ -1,13 +1,13 @@
 {
-  "name": "@signal-ui/ember",
+  "name": "@signal-web-ui/ember",
   "version": "0.1.4",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/signal-ui/signal-ui.git",
+    "url": "https://github.com/signal-web-ui/signal-web-ui.git",
     "directory": "packages/ember"
   },
-  "homepage": "https://github.com/signal-ui/signal-ui",
+  "homepage": "https://github.com/signal-web-ui/signal-web-ui",
   "keywords": [
     "ember-addon"
   ],
@@ -32,7 +32,7 @@
     "test": "echo \"Run ember test in consuming app\""
   },
   "dependencies": {
-    "@signal-ui/core": "workspace:*",
+    "@signal-web-ui/core": "workspace:*",
     "ember-auto-import": "^2.7.2",
     "@ember/render-modifiers": "^2.1.0"
   },

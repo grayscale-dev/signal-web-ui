@@ -1,11 +1,11 @@
-# @signal-ui/ember
+# @signal-web-ui/ember
 
 Ember addon for Signal UI web components (Ember 3.17 → latest).
 
 ## Install
 
 ```bash
-pnpm add @signal-ui/ember @signal-ui/core
+pnpm add @signal-web-ui/ember @signal-web-ui/core
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ The addon registers custom elements at app startup.
 If you prefer using the elements directly, the initializer automatically runs:
 
 ```ts
-import { applyPolyfills, defineCustomElements } from "@signal-ui/core/loader";
+import { applyPolyfills, defineCustomElements } from "@signal-web-ui/core/loader";
 
 applyPolyfills().then(() => defineCustomElements());
 ```

@@ -1,25 +1,25 @@
-# @signal-ui/core
+# @signal-web-ui/core
 
 Stencil-based Web Components that power Signal UI. Components ship with semantic tokens, light/dark themes, slots, parts, and framework-friendly custom events.
 
 ## Installation
 
 ```bash
-pnpm add @signal-ui/core
+pnpm add @signal-web-ui/core
 ```
 
 ## CDN usage
 
-Build outputs are located at `dist/signal-ui/signal-ui.esm.js` (module) and `dist/signal-ui/signal-ui.js` (nomodule).
+Build outputs are located at `dist/signal-web-ui/signal-web-ui.esm.js` (module) and `dist/signal-web-ui/signal-web-ui.js` (nomodule).
 
 ```html
 <!-- unpkg -->
-<script type="module" src="https://unpkg.com/@signal-ui/core/dist/signal-ui/signal-ui.esm.js"></script>
-<script nomodule src="https://unpkg.com/@signal-ui/core/dist/signal-ui/signal-ui.js"></script>
+<script type="module" src="https://unpkg.com/@signal-web-ui/core/dist/signal-web-ui/signal-web-ui.esm.js"></script>
+<script nomodule src="https://unpkg.com/@signal-web-ui/core/dist/signal-web-ui/signal-web-ui.js"></script>
 
 <!-- jsDelivr -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@signal-ui/core/dist/signal-ui/signal-ui.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@signal-ui/core/dist/signal-ui/signal-ui.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@signal-web-ui/core/dist/signal-web-ui/signal-web-ui.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@signal-web-ui/core/dist/signal-web-ui/signal-web-ui.js"></script>
 
 <signal-button>Primary</signal-button>
 ```
@@ -27,7 +27,7 @@ Build outputs are located at `dist/signal-ui/signal-ui.esm.js` (module) and `dis
 ## npm usage (loader)
 
 ```ts
-import { applyPolyfills, defineCustomElements } from "@signal-ui/core/loader";
+import { applyPolyfills, defineCustomElements } from "@signal-web-ui/core/loader";
 
 applyPolyfills().then(() => defineCustomElements());
 ```

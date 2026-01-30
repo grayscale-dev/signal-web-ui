@@ -1,17 +1,17 @@
-# @signal-ui/vue
+# @signal-web-ui/vue
 
 Vue wrappers for Signal UI web components.
 
 ## Install
 
 ```bash
-pnpm add @signal-ui/vue @signal-ui/core
+pnpm add @signal-web-ui/vue @signal-web-ui/core
 ```
 
 ## Usage
 
 ```ts
-import { defineCustomElements } from "@signal-ui/core/loader";
+import { defineCustomElements } from "@signal-web-ui/core/loader";
 
 defineCustomElements();
 ```

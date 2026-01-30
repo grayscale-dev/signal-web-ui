@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { colors, radii, spacing, themeStyles } from "@signal-ui/design-tokens";
+import { colors, radii, spacing, themeStyles } from "@signal-web-ui/design-tokens";
 
 describe("design tokens", () => {
   it("exposes light and dark palettes", () => {

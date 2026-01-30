@@ -6,4 +6,4 @@ import { DIRECTIVES } from "./directives";
   exports: [...DIRECTIVES],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class SignalUiModule {}
+export class SignalWebUiModule {}

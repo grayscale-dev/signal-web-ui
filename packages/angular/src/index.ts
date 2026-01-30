@@ -1,3 +1,3 @@
 export * from "./directives";
-export * from "./signal-ui.module";
-export { defineCustomElements } from "@signal-ui/core/loader";
+export * from "./signal-web-ui.module";
+export { defineCustomElements } from "@signal-web-ui/core/loader";

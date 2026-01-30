@@ -1,4 +1,4 @@
-# @signal-ui/design-tokens
+# @signal-web-ui/design-tokens
 
 ## 0.1.4
 

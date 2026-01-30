@@ -1,4 +1,4 @@
-# signal-ui
+# signal-web-ui
 
 ## Changesets
 

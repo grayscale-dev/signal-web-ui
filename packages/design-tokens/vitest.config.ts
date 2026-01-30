@@ -8,7 +8,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@signal-ui/design-tokens": path.resolve(__dirname, "./src"),
+      "@signal-web-ui/design-tokens": path.resolve(__dirname, "./src"),
     },
   },
 });

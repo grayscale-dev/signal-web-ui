@@ -1,4 +1,4 @@
-# @signal-ui/angular
+# @signal-web-ui/angular
 
 ## 0.1.4
 
@@ -6,7 +6,7 @@
 
 - 9f13e24: Fix
 - Updated dependencies [9f13e24]
-  - @signal-ui/core@0.1.4
+  - @signal-web-ui/core@0.1.4
 
 ## 0.1.3
 
@@ -14,7 +14,7 @@
 
 - 373e79d: Changes
 - Updated dependencies [373e79d]
-  - @signal-ui/core@0.1.3
+  - @signal-web-ui/core@0.1.3
 
 ## 0.1.2
 
@@ -26,7 +26,7 @@
 - Updated dependencies [6ae4721]
 - Updated dependencies [87feb52]
 - Updated dependencies [6964af5]
-  - @signal-ui/core@0.1.2
+  - @signal-web-ui/core@0.1.2
 
 ## 0.1.1
 
@@ -34,4 +34,4 @@
 
 - 25cbc0c: Create new packages
 - Updated dependencies [25cbc0c]
-  - @signal-ui/core@0.1.1
+  - @signal-web-ui/core@0.1.1

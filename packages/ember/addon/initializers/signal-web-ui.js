@@ -1,4 +1,4 @@
-import { applyPolyfills, defineCustomElements } from "@signal-ui/core/loader";
+import { applyPolyfills, defineCustomElements } from "@signal-web-ui/core/loader";
 
 let didDefine = false;
 

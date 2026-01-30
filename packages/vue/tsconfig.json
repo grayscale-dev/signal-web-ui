@@ -1,5 +1,5 @@
 {
-  "extends": "@signal-ui/tsconfig/library",
+  "extends": "@signal-web-ui/tsconfig/library",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",

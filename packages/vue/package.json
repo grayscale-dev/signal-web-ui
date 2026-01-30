@@ -1,14 +1,14 @@
 {
-  "name": "@signal-ui/vue",
+  "name": "@signal-web-ui/vue",
   "version": "0.1.4",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/signal-ui/signal-ui.git",
+    "url": "https://github.com/signal-web-ui/signal-web-ui.git",
     "directory": "packages/vue"
   },
-  "homepage": "https://github.com/signal-ui/signal-ui",
+  "homepage": "https://github.com/signal-web-ui/signal-web-ui",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -40,14 +40,14 @@
     "test": "pnpm run typecheck"
   },
   "dependencies": {
-    "@signal-ui/core": "workspace:*",
+    "@signal-web-ui/core": "workspace:*",
     "@stencil/vue-output-target": "^0.13.0"
   },
   "peerDependencies": {
     "vue": ">=3.2.0"
   },
   "devDependencies": {
-    "@signal-ui/tsconfig": "workspace:*",
+    "@signal-web-ui/tsconfig": "workspace:*",
     "@types/node": "^22.19.7",
     "typescript": "^5.6.3",
     "vue": "^3.5.8"

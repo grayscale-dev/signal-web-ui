@@ -1,1 +1,1 @@
-export { default } from "@signal-ui/ember/components/signal-button";
+export { default } from "@signal-web-ui/ember/components/signal-button";

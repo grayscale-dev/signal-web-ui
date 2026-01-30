@@ -3,9 +3,9 @@
 /* auto-generated vue proxies */
 import { defineContainer, type StencilVueComponent } from '@stencil/vue-output-target/runtime';
 
-import type { JSX } from '@signal-ui/core';
+import type { JSX } from '@signal-web-ui/core';
 
-import { defineCustomElements } from '@signal-ui/core/loader';
+import { defineCustomElements } from '@signal-web-ui/core/loader';
 
 
 defineCustomElements();

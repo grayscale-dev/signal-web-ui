@@ -8,11 +8,11 @@
     "noEmit": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@signal-ui/core": ["../core/src"],
-      "@signal-ui/core/*": ["../core/src/*"],
-      "@signal-ui/design-tokens": ["../design-tokens/src"],
-      "@signal-ui/design-tokens/*": ["../design-tokens/src/*"],
-      "@signal-ui/eslint-config": ["../eslint-config/index.js"]
+      "@signal-web-ui/core": ["../core/src"],
+      "@signal-web-ui/core/*": ["../core/src/*"],
+      "@signal-web-ui/design-tokens": ["../design-tokens/src"],
+      "@signal-web-ui/design-tokens/*": ["../design-tokens/src/*"],
+      "@signal-web-ui/eslint-config": ["../eslint-config/index.js"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,4 +1,4 @@
-# @signal-ui/eslint-config
+# @signal-web-ui/eslint-config
 
 ## 0.1.4
 

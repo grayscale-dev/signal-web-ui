@@ -7,7 +7,7 @@
 
 /* eslint-disable */
 
-import { SignalButton as SignalButtonElement, defineCustomElement as defineSignalButton } from "@signal-ui/core/dist/custom-elements/signal-button.js";
+import { SignalButton as SignalButtonElement, defineCustomElement as defineSignalButton } from "@signal-web-ui/core/dist/custom-elements/signal-button.js";
 import type { StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';

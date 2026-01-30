@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["@signal-ui/eslint-config"],
+  extends: ["@signal-web-ui/eslint-config"],
   parserOptions: {
     project: "./tsconfig.eslint.json"
   }

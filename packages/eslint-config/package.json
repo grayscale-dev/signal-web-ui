@@ -1,5 +1,5 @@
 {
-  "name": "@signal-ui/eslint-config",
+  "name": "@signal-web-ui/eslint-config",
   "version": "0.1.4",
   "private": true,
   "main": "index.js",

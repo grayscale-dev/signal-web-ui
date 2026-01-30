@@ -4,13 +4,13 @@
 - Confirm versions for all publishable packages in `packages/*/package.json`.
 - Run a clean install: `pnpm install`.
 - Run `pnpm build` and `pnpm test`.
-- Ensure `packages/core/dist/signal-ui/` contains both `signal-ui.esm.js` and `signal-ui.js`.
+- Ensure `packages/core/dist/signal-web-ui/` contains both `signal-web-ui.esm.js` and `signal-web-ui.js`.
 
 ## Publish order
-1) `@signal-ui/design-tokens` (if publishing)
-2) `@signal-ui/core`
-3) Wrappers: `@signal-ui/react`, `@signal-ui/vue`, `@signal-ui/angular`, `@signal-ui/ember`
-4) Tooling packages (if publishing): `@signal-ui/tsconfig`, `@signal-ui/eslint-config`
+1) `@signal-web-ui/design-tokens` (if publishing)
+2) `@signal-web-ui/core`
+3) Wrappers: `@signal-web-ui/react`, `@signal-web-ui/vue`, `@signal-web-ui/angular`, `@signal-web-ui/ember`
+4) Tooling packages (if publishing): `@signal-web-ui/tsconfig`, `@signal-web-ui/eslint-config`
 
 ## Publish commands (pnpm)
 - From repo root: `pnpm -r publish --access public --tag latest`
@@ -19,5 +19,5 @@
 ## Post-publish
 - Verify CDN assets on unpkg/jsDelivr.
 - Smoke test loader:
-  - `import { defineCustomElements } from "@signal-ui/core/loader"; defineCustomElements();`
+  - `import { defineCustomElements } from "@signal-web-ui/core/loader"; defineCustomElements();`
 - Smoke test wrappers in a demo app.

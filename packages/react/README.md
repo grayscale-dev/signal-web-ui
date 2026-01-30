@@ -1,18 +1,18 @@
-# @signal-ui/react
+# @signal-web-ui/react
 
 React wrappers for Signal UI web components.
 
 ## Install
 
 ```bash
-pnpm add @signal-ui/react @signal-ui/core
+pnpm add @signal-web-ui/react @signal-web-ui/core
 ```
 
 ## Usage
 
 ```tsx
-import { defineCustomElements } from "@signal-ui/core/loader";
-import { SignalButton } from "@signal-ui/react";
+import { defineCustomElements } from "@signal-web-ui/core/loader";
+import { SignalButton } from "@signal-web-ui/react";
 
 defineCustomElements();
 

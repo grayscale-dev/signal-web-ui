@@ -1,5 +1,5 @@
 {
-  "extends": "@signal-ui/tsconfig/library",
+  "extends": "@signal-web-ui/tsconfig/library",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "src",
@@ -12,7 +12,7 @@
     "moduleResolution": "Bundler",
     "types": ["react", "react-dom"],
     "paths": {
-      "@signal-ui/core/dist/custom-elements/*": ["../core/dist/custom-elements/*"]
+      "@signal-web-ui/core/dist/custom-elements/*": ["../core/dist/custom-elements/*"]
     }
   },
   "include": ["src"]
