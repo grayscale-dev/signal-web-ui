@@ -33,6 +33,9 @@ export interface Components {
   SignalTooltip: Record<string, never>;
   SignalModal: Record<string, never>;
   SignalTable: Record<string, never>;
+  SignalDrawer: Record<string, never>;
+  SignalDropdown: Record<string, never>;
+  SignalPopover: Record<string, never>;
 }
 
 export interface JSX {
@@ -71,6 +74,9 @@ export interface JSX {
     "signal-tooltip": Record<string, unknown>;
     "signal-modal": Record<string, unknown>;
     "signal-table": Record<string, unknown>;
+    "signal-drawer": Record<string, unknown>;
+    "signal-dropdown": Record<string, unknown>;
+    "signal-popover": Record<string, unknown>;
   };
 }
 
@@ -179,6 +185,21 @@ export interface SignalModalCustomEvent<T> extends CustomEvent<T> {
 }
 
 export interface SignalTableCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalDrawerCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalDropdownCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalPopoverCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLElement;
 }

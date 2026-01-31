@@ -21,5 +21,8 @@ export type {
   SignalNavbarCustomEvent,
   SignalTabsCustomEvent,
   SignalModalCustomEvent,
-  SignalTableCustomEvent
+  SignalTableCustomEvent,
+  SignalDrawerCustomEvent,
+  SignalDropdownCustomEvent,
+  SignalPopoverCustomEvent
 } from "./components";

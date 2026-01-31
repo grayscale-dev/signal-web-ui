@@ -14,6 +14,8 @@ import { defineCustomElement as defineSignalCard } from '@signal-web-ui/core/dis
 import { defineCustomElement as defineSignalCheckbox } from '@signal-web-ui/core/dist/custom-elements/signal-checkbox.js';
 import { defineCustomElement as defineSignalCombobox } from '@signal-web-ui/core/dist/custom-elements/signal-combobox.js';
 import { defineCustomElement as defineSignalDataTable } from '@signal-web-ui/core/dist/custom-elements/signal-data-table.js';
+import { defineCustomElement as defineSignalDrawer } from '@signal-web-ui/core/dist/custom-elements/signal-drawer.js';
+import { defineCustomElement as defineSignalDropdown } from '@signal-web-ui/core/dist/custom-elements/signal-dropdown.js';
 import { defineCustomElement as defineSignalFeatureTable } from '@signal-web-ui/core/dist/custom-elements/signal-feature-table.js';
 import { defineCustomElement as defineSignalFileUpload } from '@signal-web-ui/core/dist/custom-elements/signal-file-upload.js';
 import { defineCustomElement as defineSignalHeading } from '@signal-web-ui/core/dist/custom-elements/signal-heading.js';
@@ -23,6 +25,7 @@ import { defineCustomElement as defineSignalListItem } from '@signal-web-ui/core
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
 import { defineCustomElement as defineSignalNavbar } from '@signal-web-ui/core/dist/custom-elements/signal-navbar.js';
 import { defineCustomElement as defineSignalPage } from '@signal-web-ui/core/dist/custom-elements/signal-page.js';
+import { defineCustomElement as defineSignalPopover } from '@signal-web-ui/core/dist/custom-elements/signal-popover.js';
 import { defineCustomElement as defineSignalProgress } from '@signal-web-ui/core/dist/custom-elements/signal-progress.js';
 import { defineCustomElement as defineSignalRadioGroup } from '@signal-web-ui/core/dist/custom-elements/signal-radio-group.js';
 import { defineCustomElement as defineSignalSection } from '@signal-web-ui/core/dist/custom-elements/signal-section.js';
@@ -250,6 +253,76 @@ export class SignalDataTable {
 export declare interface SignalDataTable extends Components.SignalDataTable {
 
   rowClick: EventEmitter<CustomEvent<{ row: Record<string, unknown> }>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalDrawer,
+  inputs: ['defaultSnap', 'description', 'dismissOnBackdrop', 'dismissible', 'heading', 'open', 'side', 'size', 'snapPoints']
+})
+@Component({
+  selector: 'signal-drawer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['defaultSnap', 'description', 'dismissOnBackdrop', 'dismissible', 'heading', 'open', 'side', 'size', 'snapPoints'],
+  outputs: ['openChange', 'close'],
+})
+export class SignalDrawer {
+  protected el: HTMLSignalDrawerElement;
+  @Output() openChange = new EventEmitter<CustomEvent<{ open: boolean }>>();
+  @Output() close = new EventEmitter<CustomEvent<void>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalDrawer extends Components.SignalDrawer {
+  /**
+   * Fires whenever open state changes.
+   */
+  openChange: EventEmitter<CustomEvent<{ open: boolean }>>;
+  /**
+   * Fired when the drawer is dismissed.
+   */
+  close: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalDropdown,
+  inputs: ['align', 'closeOnSelect', 'items', 'label', 'open']
+})
+@Component({
+  selector: 'signal-dropdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['align', 'closeOnSelect', 'items', 'label', 'open'],
+  outputs: ['openChange', 'itemSelect'],
+})
+export class SignalDropdown {
+  protected el: HTMLSignalDropdownElement;
+  @Output() openChange = new EventEmitter<CustomEvent<{ open: boolean }>>();
+  @Output() itemSelect = new EventEmitter<CustomEvent<{ key: string }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalDropdown extends Components.SignalDropdown {
+  /**
+   * Emits when open toggles.
+   */
+  openChange: EventEmitter<CustomEvent<{ open: boolean }>>;
+  /**
+   * Emits when an item is selected.
+   */
+  itemSelect: EventEmitter<CustomEvent<{ key: string }>>;
 }
 
 
@@ -518,6 +591,37 @@ export class SignalPage {
 
 
 export declare interface SignalPage extends Components.SignalPage {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalPopover,
+  inputs: ['closeOnSelect', 'defaultOpen', 'dismissOnClickOutside', 'open', 'placement']
+})
+@Component({
+  selector: 'signal-popover',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['closeOnSelect', 'defaultOpen', 'dismissOnClickOutside', 'open', 'placement'],
+  outputs: ['openChange', 'close'],
+})
+export class SignalPopover {
+  protected el: HTMLSignalPopoverElement;
+  @Output() openChange = new EventEmitter<CustomEvent<{ open: boolean }>>();
+  @Output() close = new EventEmitter<CustomEvent<void>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalPopover extends Components.SignalPopover {
+
+  openChange: EventEmitter<CustomEvent<{ open: boolean }>>;
+
+  close: EventEmitter<CustomEvent<void>>;
+}
 
 
 @ProxyCmp({

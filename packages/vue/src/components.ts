@@ -102,6 +102,38 @@ export const SignalDataTable: StencilVueComponent<JSX.SignalDataTable> = /*@__PU
 ]);
 
 
+export const SignalDrawer: StencilVueComponent<JSX.SignalDrawer> = /*@__PURE__*/ defineContainer<JSX.SignalDrawer>('signal-drawer', undefined, [
+  'open',
+  'side',
+  'heading',
+  'description',
+  'size',
+  'snapPoints',
+  'defaultSnap',
+  'dismissOnBackdrop',
+  'dismissible',
+  'openChange',
+  'close'
+], [
+  'openChange',
+  'close'
+]);
+
+
+export const SignalDropdown: StencilVueComponent<JSX.SignalDropdown> = /*@__PURE__*/ defineContainer<JSX.SignalDropdown>('signal-dropdown', undefined, [
+  'open',
+  'items',
+  'label',
+  'align',
+  'closeOnSelect',
+  'openChange',
+  'itemSelect'
+], [
+  'openChange',
+  'itemSelect'
+]);
+
+
 export const SignalFeatureTable: StencilVueComponent<JSX.SignalFeatureTable> = /*@__PURE__*/ defineContainer<JSX.SignalFeatureTable>('signal-feature-table', undefined, [
   'columns',
   'rows',
@@ -244,6 +276,20 @@ export const SignalPage: StencilVueComponent<JSX.SignalPage> = /*@__PURE__*/ def
   'loading',
   'error',
   'empty'
+]);
+
+
+export const SignalPopover: StencilVueComponent<JSX.SignalPopover> = /*@__PURE__*/ defineContainer<JSX.SignalPopover>('signal-popover', undefined, [
+  'open',
+  'defaultOpen',
+  'placement',
+  'dismissOnClickOutside',
+  'closeOnSelect',
+  'openChange',
+  'close'
+], [
+  'openChange',
+  'close'
 ]);
 
 

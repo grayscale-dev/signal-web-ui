@@ -1,0 +1,77 @@
+:host {
+  display: inline-block;
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--signal-radius-sm, 6px);
+  border: 1px solid var(--signal-color-border, #d0d7de);
+  background: var(--signal-color-surface, #fff);
+  color: var(--signal-color-text, #111);
+  font: inherit;
+  cursor: pointer;
+  box-shadow: var(--signal-shadow-soft, 0 1px 2px rgba(0,0,0,0.08));
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--signal-color-accent, #236cff);
+  outline-offset: 2px;
+}
+
+.caret { color: var(--signal-color-subtle, #5f6a7d); }
+
+.menu {
+  position: absolute;
+  min-width: 220px;
+  margin-top: 8px;
+  border-radius: var(--signal-radius-sm, 6px);
+  border: 1px solid var(--signal-color-border, #d0d7de);
+  background: var(--signal-color-surface, #fff);
+  box-shadow: var(--signal-shadow-strong, 0 12px 28px rgba(0,0,0,0.2));
+  padding: 4px;
+  z-index: 10;
+  outline: none;
+}
+
+.wrapper.right .menu { right: 0; }
+.wrapper.left .menu { left: 0; }
+
+.item {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  border-radius: 4px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--signal-color-text, #111);
+  cursor: pointer;
+}
+
+.item:hover, .item.focused {
+  background: var(--signal-color-muted, #f2f4f7);
+}
+
+.item.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.item.danger {
+  color: var(--signal-color-danger, #d1242f);
+}
+
+.shortcut {
+  color: var(--signal-color-subtle, #5f6a7d);
+  font-size: 12px;
+}
