@@ -1,0 +1,51 @@
+:host {
+  display: block;
+}
+
+.root {
+  border: 1px solid var(--signal-border, #e5e7eb);
+  border-radius: 12px;
+  background: var(--signal-surface, #ffffff);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--signal-border, #e5e7eb);
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--signal-subtle, #6b7280);
+}
+
+.actions {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.toggle {
+  border: 1px solid var(--signal-border, #e5e7eb);
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--signal-subtle, #6b7280);
+}
+
+.body {
+  padding: 16px;
+}

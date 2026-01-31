@@ -42,7 +42,12 @@ export class SignalSelect {
             {this.placeholder}
           </option>
           {this.options.map((option) => (
-            <option value={option.value} disabled={option.disabled} selected={this.internalValue === option.value}>
+            <option
+              key={option.value}
+              value={option.value}
+              disabled={option.disabled}
+              selected={this.internalValue === option.value}
+            >
               {option.label}
             </option>
           ))}

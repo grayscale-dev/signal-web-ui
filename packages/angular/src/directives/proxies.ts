@@ -6,8 +6,10 @@ import { ProxyCmp } from './angular-component-lib/utils';
 
 import type { Components } from '@signal-web-ui/core/dist/custom-elements';
 
+import { defineCustomElement as defineSignalAppShell } from '@signal-web-ui/core/dist/custom-elements/signal-app-shell.js';
 import { defineCustomElement as defineSignalBadge } from '@signal-web-ui/core/dist/custom-elements/signal-badge.js';
 import { defineCustomElement as defineSignalButton } from '@signal-web-ui/core/dist/custom-elements/signal-button.js';
+import { defineCustomElement as defineSignalCard } from '@signal-web-ui/core/dist/custom-elements/signal-card.js';
 import { defineCustomElement as defineSignalCheckbox } from '@signal-web-ui/core/dist/custom-elements/signal-checkbox.js';
 import { defineCustomElement as defineSignalCombobox } from '@signal-web-ui/core/dist/custom-elements/signal-combobox.js';
 import { defineCustomElement as defineSignalDataTable } from '@signal-web-ui/core/dist/custom-elements/signal-data-table.js';
@@ -15,14 +17,19 @@ import { defineCustomElement as defineSignalFeatureTable } from '@signal-web-ui/
 import { defineCustomElement as defineSignalFileUpload } from '@signal-web-ui/core/dist/custom-elements/signal-file-upload.js';
 import { defineCustomElement as defineSignalHeading } from '@signal-web-ui/core/dist/custom-elements/signal-heading.js';
 import { defineCustomElement as defineSignalInput } from '@signal-web-ui/core/dist/custom-elements/signal-input.js';
+import { defineCustomElement as defineSignalLayout } from '@signal-web-ui/core/dist/custom-elements/signal-layout.js';
 import { defineCustomElement as defineSignalListItem } from '@signal-web-ui/core/dist/custom-elements/signal-list-item.js';
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
+import { defineCustomElement as defineSignalPage } from '@signal-web-ui/core/dist/custom-elements/signal-page.js';
 import { defineCustomElement as defineSignalProgress } from '@signal-web-ui/core/dist/custom-elements/signal-progress.js';
 import { defineCustomElement as defineSignalRadioGroup } from '@signal-web-ui/core/dist/custom-elements/signal-radio-group.js';
+import { defineCustomElement as defineSignalSection } from '@signal-web-ui/core/dist/custom-elements/signal-section.js';
 import { defineCustomElement as defineSignalSelect } from '@signal-web-ui/core/dist/custom-elements/signal-select.js';
+import { defineCustomElement as defineSignalSidebar } from '@signal-web-ui/core/dist/custom-elements/signal-sidebar.js';
 import { defineCustomElement as defineSignalSkeleton } from '@signal-web-ui/core/dist/custom-elements/signal-skeleton.js';
 import { defineCustomElement as defineSignalSlider } from '@signal-web-ui/core/dist/custom-elements/signal-slider.js';
 import { defineCustomElement as defineSignalSnackbar } from '@signal-web-ui/core/dist/custom-elements/signal-snackbar.js';
+import { defineCustomElement as defineSignalSplitView } from '@signal-web-ui/core/dist/custom-elements/signal-split-view.js';
 import { defineCustomElement as defineSignalSwitch } from '@signal-web-ui/core/dist/custom-elements/signal-switch.js';
 import { defineCustomElement as defineSignalTable } from '@signal-web-ui/core/dist/custom-elements/signal-table.js';
 import { defineCustomElement as defineSignalTag } from '@signal-web-ui/core/dist/custom-elements/signal-tag.js';
@@ -30,6 +37,29 @@ import { defineCustomElement as defineSignalText } from '@signal-web-ui/core/dis
 import { defineCustomElement as defineSignalTextarea } from '@signal-web-ui/core/dist/custom-elements/signal-textarea.js';
 import { defineCustomElement as defineSignalToast } from '@signal-web-ui/core/dist/custom-elements/signal-toast.js';
 import { defineCustomElement as defineSignalTooltip } from '@signal-web-ui/core/dist/custom-elements/signal-tooltip.js';
+@ProxyCmp({
+  defineCustomElementFn: defineSignalAppShell,
+  inputs: ['padded']
+})
+@Component({
+  selector: 'signal-app-shell',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['padded'],
+})
+export class SignalAppShell {
+  protected el: HTMLSignalAppShellElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalAppShell extends Components.SignalAppShell {}
+
+
 @ProxyCmp({
   defineCustomElementFn: defineSignalBadge,
   inputs: ['size', 'soft', 'tone']
@@ -74,6 +104,29 @@ export class SignalButton {
 
 
 export declare interface SignalButton extends Components.SignalButton {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalCard,
+  inputs: ['description', 'disabled', 'heading', 'href', 'interactive', 'loading', 'padded', 'selected', 'status', 'variant']
+})
+@Component({
+  selector: 'signal-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['description', 'disabled', 'heading', 'href', 'interactive', 'loading', 'padded', 'selected', 'status', 'variant'],
+})
+export class SignalCard {
+  protected el: HTMLSignalCardElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalCard extends Components.SignalCard {}
 
 
 @ProxyCmp({
@@ -301,6 +354,29 @@ export declare interface SignalInput extends Components.SignalInput {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalLayout,
+  inputs: ['align', 'columns', 'direction', 'divider', 'gap', 'justify', 'layout', 'minItemWidth', 'wrap']
+})
+@Component({
+  selector: 'signal-layout',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['align', 'columns', 'direction', 'divider', 'gap', 'justify', 'layout', 'minItemWidth', 'wrap'],
+})
+export class SignalLayout {
+  protected el: HTMLSignalLayoutElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalLayout extends Components.SignalLayout {}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalListItem,
   inputs: ['disabled', 'heading', 'href', 'selected', 'subtitle']
 })
@@ -363,6 +439,29 @@ export declare interface SignalModal extends Components.SignalModal {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalPage,
+  inputs: ['description', 'empty', 'error', 'heading', 'loading']
+})
+@Component({
+  selector: 'signal-page',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['description', 'empty', 'error', 'heading', 'loading'],
+})
+export class SignalPage {
+  protected el: HTMLSignalPageElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalPage extends Components.SignalPage {}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalProgress,
   inputs: ['indeterminate', 'label', 'max', 'showValue', 'size', 'state', 'type', 'value']
 })
@@ -414,6 +513,29 @@ export declare interface SignalRadioGroup extends Components.SignalRadioGroup {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalSection,
+  inputs: ['collapsible', 'defaultCollapsed', 'heading', 'loading', 'subtitle']
+})
+@Component({
+  selector: 'signal-section',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['collapsible', 'defaultCollapsed', 'heading', 'loading', 'subtitle'],
+})
+export class SignalSection {
+  protected el: HTMLSignalSectionElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSection extends Components.SignalSection {}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalSelect,
   inputs: ['disabled', 'options', 'placeholder', 'value']
 })
@@ -438,6 +560,37 @@ export class SignalSelect {
 export declare interface SignalSelect extends Components.SignalSelect {
 
   valueChange: EventEmitter<CustomEvent<{ value: string | undefined }>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalSidebar,
+  inputs: ['activeItem', 'collapsible', 'defaultCollapsed', 'heading', 'items', 'searchable']
+})
+@Component({
+  selector: 'signal-sidebar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['activeItem', 'collapsible', 'defaultCollapsed', 'heading', 'items', 'searchable'],
+  outputs: ['navigate', 'toggle'],
+})
+export class SignalSidebar {
+  protected el: HTMLSignalSidebarElement;
+  @Output() navigate = new EventEmitter<CustomEvent<{ id: string }>>();
+  @Output() toggle = new EventEmitter<CustomEvent<{ collapsed: boolean }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSidebar extends Components.SignalSidebar {
+
+  navigate: EventEmitter<CustomEvent<{ id: string }>>;
+
+  toggle: EventEmitter<CustomEvent<{ collapsed: boolean }>>;
 }
 
 
@@ -520,6 +673,34 @@ export declare interface SignalSnackbar extends Components.SignalSnackbar {
   action: EventEmitter<CustomEvent<void>>;
 
   dismiss: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalSplitView,
+  inputs: ['collapsible', 'defaultSizes', 'minSizes', 'orientation', 'panes']
+})
+@Component({
+  selector: 'signal-split-view',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['collapsible', 'defaultSizes', 'minSizes', 'orientation', 'panes'],
+  outputs: ['sizesChange'],
+})
+export class SignalSplitView {
+  protected el: HTMLSignalSplitViewElement;
+  @Output() sizesChange = new EventEmitter<CustomEvent<{ sizes: number[] }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSplitView extends Components.SignalSplitView {
+
+  sizesChange: EventEmitter<CustomEvent<{ sizes: number[] }>>;
 }
 
 

@@ -16,6 +16,13 @@ export interface Components {
   SignalSlider: Record<string, never>;
   SignalRadioGroup: Record<string, never>;
   SignalTextarea: Record<string, never>;
+  SignalAppShell: Record<string, never>;
+  SignalSidebar: Record<string, never>;
+  SignalCard: Record<string, never>;
+  SignalLayout: Record<string, never>;
+  SignalPage: Record<string, never>;
+  SignalSection: Record<string, never>;
+  SignalSplitView: Record<string, never>;
   SignalHeading: Record<string, never>;
   SignalListItem: Record<string, never>;
   SignalSkeleton: Record<string, never>;
@@ -44,6 +51,13 @@ export interface JSX {
     "signal-slider": Record<string, unknown>;
     "signal-radio-group": Record<string, unknown>;
     "signal-textarea": Record<string, unknown>;
+    "signal-app-shell": Record<string, unknown>;
+    "signal-sidebar": Record<string, unknown>;
+    "signal-card": Record<string, unknown>;
+    "signal-layout": Record<string, unknown>;
+    "signal-page": Record<string, unknown>;
+    "signal-section": Record<string, unknown>;
+    "signal-split-view": Record<string, unknown>;
     "signal-heading": Record<string, unknown>;
     "signal-list-item": Record<string, unknown>;
     "signal-skeleton": Record<string, unknown>;
@@ -120,6 +134,16 @@ export interface SignalRadioGroupCustomEvent<T> extends CustomEvent<T> {
 }
 
 export interface SignalTextareaCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalSidebarCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalSplitViewCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLElement;
 }

@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+.root.divider-stack-column > ::slotted(*) {
+  border-top: 1px solid var(--signal-border, #e5e7eb);
+  padding-top: 8px;
+}
+
+.root.divider-stack-row > ::slotted(*) {
+  border-left: 1px solid var(--signal-border, #e5e7eb);
+  padding-left: 8px;
+}
+
+.root.divider-grid-column > ::slotted(*) {
+  border: 1px solid var(--signal-border, #e5e7eb);
+  border-radius: 10px;
+  padding: 8px;
+}

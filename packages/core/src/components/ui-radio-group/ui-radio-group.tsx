@@ -40,6 +40,7 @@ export class SignalRadioGroup {
         {this.options.map((option) => (
           <label
             part="item"
+            key={option.value}
             class={{
               item: true,
               selected: this.internalValue === option.value,

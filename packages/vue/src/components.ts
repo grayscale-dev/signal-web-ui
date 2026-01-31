@@ -10,6 +10,11 @@ import { defineCustomElements } from '@signal-web-ui/core/loader';
 
 defineCustomElements();
 
+export const SignalAppShell: StencilVueComponent<JSX.SignalAppShell> = /*@__PURE__*/ defineContainer<JSX.SignalAppShell>('signal-app-shell', undefined, [
+  'padded'
+]);
+
+
 export const SignalBadge: StencilVueComponent<JSX.SignalBadge> = /*@__PURE__*/ defineContainer<JSX.SignalBadge>('signal-badge', undefined, [
   'tone',
   'soft',
@@ -23,6 +28,20 @@ export const SignalButton: StencilVueComponent<JSX.SignalButton> = /*@__PURE__*/
   'loading',
   'disabled',
   'type'
+]);
+
+
+export const SignalCard: StencilVueComponent<JSX.SignalCard> = /*@__PURE__*/ defineContainer<JSX.SignalCard>('signal-card', undefined, [
+  'variant',
+  'heading',
+  'description',
+  'status',
+  'padded',
+  'interactive',
+  'selected',
+  'disabled',
+  'loading',
+  'href'
 ]);
 
 
@@ -146,6 +165,19 @@ export const SignalInput: StencilVueComponent<JSX.SignalInput> = /*@__PURE__*/ d
 ]);
 
 
+export const SignalLayout: StencilVueComponent<JSX.SignalLayout> = /*@__PURE__*/ defineContainer<JSX.SignalLayout>('signal-layout', undefined, [
+  'layout',
+  'direction',
+  'gap',
+  'align',
+  'justify',
+  'wrap',
+  'columns',
+  'minItemWidth',
+  'divider'
+]);
+
+
 export const SignalListItem: StencilVueComponent<JSX.SignalListItem> = /*@__PURE__*/ defineContainer<JSX.SignalListItem>('signal-list-item', undefined, [
   'heading',
   'subtitle',
@@ -185,6 +217,15 @@ export const SignalModal: StencilVueComponent<JSX.SignalModal> = /*@__PURE__*/ d
 ]);
 
 
+export const SignalPage: StencilVueComponent<JSX.SignalPage> = /*@__PURE__*/ defineContainer<JSX.SignalPage>('signal-page', undefined, [
+  'heading',
+  'description',
+  'loading',
+  'error',
+  'empty'
+]);
+
+
 export const SignalProgress: StencilVueComponent<JSX.SignalProgress> = /*@__PURE__*/ defineContainer<JSX.SignalProgress>('signal-progress', undefined, [
   'value',
   'max',
@@ -208,6 +249,15 @@ export const SignalRadioGroup: StencilVueComponent<JSX.SignalRadioGroup> = /*@__
 ]);
 
 
+export const SignalSection: StencilVueComponent<JSX.SignalSection> = /*@__PURE__*/ defineContainer<JSX.SignalSection>('signal-section', undefined, [
+  'heading',
+  'subtitle',
+  'collapsible',
+  'defaultCollapsed',
+  'loading'
+]);
+
+
 export const SignalSelect: StencilVueComponent<JSX.SignalSelect> = /*@__PURE__*/ defineContainer<JSX.SignalSelect>('signal-select', undefined, [
   'options',
   'placeholder',
@@ -216,6 +266,21 @@ export const SignalSelect: StencilVueComponent<JSX.SignalSelect> = /*@__PURE__*/
   'valueChange'
 ], [
   'valueChange'
+]);
+
+
+export const SignalSidebar: StencilVueComponent<JSX.SignalSidebar> = /*@__PURE__*/ defineContainer<JSX.SignalSidebar>('signal-sidebar', undefined, [
+  'items',
+  'activeItem',
+  'collapsible',
+  'defaultCollapsed',
+  'searchable',
+  'heading',
+  'navigate',
+  'toggle'
+], [
+  'navigate',
+  'toggle'
 ]);
 
 
@@ -253,6 +318,18 @@ export const SignalSnackbar: StencilVueComponent<JSX.SignalSnackbar> = /*@__PURE
 ], [
   'action',
   'dismiss'
+]);
+
+
+export const SignalSplitView: StencilVueComponent<JSX.SignalSplitView> = /*@__PURE__*/ defineContainer<JSX.SignalSplitView>('signal-split-view', undefined, [
+  'orientation',
+  'panes',
+  'minSizes',
+  'defaultSizes',
+  'collapsible',
+  'sizesChange'
+], [
+  'sizesChange'
 ]);
 
 

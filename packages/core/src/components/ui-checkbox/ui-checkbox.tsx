@@ -36,12 +36,17 @@ export class SignalCheckbox {
   render() {
     const showIndeterminate = this.indeterminate && !this.internalChecked;
     return (
-      <label
+      <button
+        type="button"
         part="root"
         class={{
           root: true,
           disabled: this.disabled,
         }}
+        role="checkbox"
+        aria-checked={this.indeterminate ? "mixed" : this.internalChecked ? "true" : "false"}
+        tabIndex={this.disabled ? -1 : 0}
+        disabled={this.disabled}
         onClick={() => this.toggle()}
       >
         <span
@@ -62,7 +67,7 @@ export class SignalCheckbox {
             <slot>{this.label}</slot>
           </span>
         )}
-      </label>
+      </button>
     );
   }
 }
