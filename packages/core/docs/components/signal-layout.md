@@ -1,0 +1,27 @@
+# signal-layout
+
+Flex/grid convenience layout component.
+
+## Usage
+```html
+<signal-layout gap="16" columns="3" min-item-width="200">
+  <div>Item</div>
+</signal-layout>
+```
+
+## Props
+- `layout` string (e.g., "grid" | "stack" depending on implementation)
+- `columns` number
+- `minItemWidth` number
+- `gap` number | string
+- `direction` string
+- `justify` string
+- `align` string
+- `wrap` boolean
+- `divider` boolean
+
+## Events
+None.
+
+## Slots
+- default: layout children.
