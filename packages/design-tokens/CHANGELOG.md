@@ -1,5 +1,7 @@
 # @signal-web-ui/design-tokens
 
+## 0.1.12
+
 ## 0.1.11
 
 ### Patch Changes

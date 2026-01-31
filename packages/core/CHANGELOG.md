@@ -1,5 +1,11 @@
 # @signal-web-ui/core
 
+## 0.1.12
+
+### Patch Changes
+
+- c8fffa4: Create docs
+
 ## 0.1.11
 
 ### Patch Changes
