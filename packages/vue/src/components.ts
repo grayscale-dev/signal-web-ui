@@ -22,6 +22,15 @@ export const SignalBadge: StencilVueComponent<JSX.SignalBadge> = /*@__PURE__*/ d
 ]);
 
 
+export const SignalBreadcrumbs: StencilVueComponent<JSX.SignalBreadcrumbs> = /*@__PURE__*/ defineContainer<JSX.SignalBreadcrumbs>('signal-breadcrumbs', undefined, [
+  'items',
+  'maxItems',
+  'navigate'
+], [
+  'navigate'
+]);
+
+
 export const SignalButton: StencilVueComponent<JSX.SignalButton> = /*@__PURE__*/ defineContainer<JSX.SignalButton>('signal-button', undefined, [
   'variant',
   'size',
@@ -217,6 +226,18 @@ export const SignalModal: StencilVueComponent<JSX.SignalModal> = /*@__PURE__*/ d
 ]);
 
 
+export const SignalNavbar: StencilVueComponent<JSX.SignalNavbar> = /*@__PURE__*/ defineContainer<JSX.SignalNavbar>('signal-navbar', undefined, [
+  'brand',
+  'items',
+  'activeItem',
+  'collapsed',
+  'scrolled',
+  'navigate'
+], [
+  'navigate'
+]);
+
+
 export const SignalPage: StencilVueComponent<JSX.SignalPage> = /*@__PURE__*/ defineContainer<JSX.SignalPage>('signal-page', undefined, [
   'heading',
   'description',
@@ -365,6 +386,21 @@ export const SignalTable: StencilVueComponent<JSX.SignalTable> = /*@__PURE__*/ d
   'reorder',
   'searchChange',
   'filterChange'
+]);
+
+
+export const SignalTabs: StencilVueComponent<JSX.SignalTabs> = /*@__PURE__*/ defineContainer<JSX.SignalTabs>('signal-tabs', undefined, [
+  'tabs',
+  'value',
+  'activeKey',
+  'variant',
+  'orientation',
+  'keepAlive',
+  'lazy',
+  'validationMap',
+  'valueChange'
+], [
+  'valueChange'
 ]);
 
 

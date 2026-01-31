@@ -23,6 +23,9 @@ export interface Components {
   SignalPage: Record<string, never>;
   SignalSection: Record<string, never>;
   SignalSplitView: Record<string, never>;
+  SignalBreadcrumbs: Record<string, never>;
+  SignalNavbar: Record<string, never>;
+  SignalTabs: Record<string, never>;
   SignalHeading: Record<string, never>;
   SignalListItem: Record<string, never>;
   SignalSkeleton: Record<string, never>;
@@ -58,6 +61,9 @@ export interface JSX {
     "signal-page": Record<string, unknown>;
     "signal-section": Record<string, unknown>;
     "signal-split-view": Record<string, unknown>;
+    "signal-breadcrumbs": Record<string, unknown>;
+    "signal-navbar": Record<string, unknown>;
+    "signal-tabs": Record<string, unknown>;
     "signal-heading": Record<string, unknown>;
     "signal-list-item": Record<string, unknown>;
     "signal-skeleton": Record<string, unknown>;
@@ -144,6 +150,21 @@ export interface SignalSidebarCustomEvent<T> extends CustomEvent<T> {
 }
 
 export interface SignalSplitViewCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalBreadcrumbsCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalNavbarCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalTabsCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLElement;
 }

@@ -8,6 +8,7 @@ import type { Components } from '@signal-web-ui/core/dist/custom-elements';
 
 import { defineCustomElement as defineSignalAppShell } from '@signal-web-ui/core/dist/custom-elements/signal-app-shell.js';
 import { defineCustomElement as defineSignalBadge } from '@signal-web-ui/core/dist/custom-elements/signal-badge.js';
+import { defineCustomElement as defineSignalBreadcrumbs } from '@signal-web-ui/core/dist/custom-elements/signal-breadcrumbs.js';
 import { defineCustomElement as defineSignalButton } from '@signal-web-ui/core/dist/custom-elements/signal-button.js';
 import { defineCustomElement as defineSignalCard } from '@signal-web-ui/core/dist/custom-elements/signal-card.js';
 import { defineCustomElement as defineSignalCheckbox } from '@signal-web-ui/core/dist/custom-elements/signal-checkbox.js';
@@ -20,6 +21,7 @@ import { defineCustomElement as defineSignalInput } from '@signal-web-ui/core/di
 import { defineCustomElement as defineSignalLayout } from '@signal-web-ui/core/dist/custom-elements/signal-layout.js';
 import { defineCustomElement as defineSignalListItem } from '@signal-web-ui/core/dist/custom-elements/signal-list-item.js';
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
+import { defineCustomElement as defineSignalNavbar } from '@signal-web-ui/core/dist/custom-elements/signal-navbar.js';
 import { defineCustomElement as defineSignalPage } from '@signal-web-ui/core/dist/custom-elements/signal-page.js';
 import { defineCustomElement as defineSignalProgress } from '@signal-web-ui/core/dist/custom-elements/signal-progress.js';
 import { defineCustomElement as defineSignalRadioGroup } from '@signal-web-ui/core/dist/custom-elements/signal-radio-group.js';
@@ -32,6 +34,7 @@ import { defineCustomElement as defineSignalSnackbar } from '@signal-web-ui/core
 import { defineCustomElement as defineSignalSplitView } from '@signal-web-ui/core/dist/custom-elements/signal-split-view.js';
 import { defineCustomElement as defineSignalSwitch } from '@signal-web-ui/core/dist/custom-elements/signal-switch.js';
 import { defineCustomElement as defineSignalTable } from '@signal-web-ui/core/dist/custom-elements/signal-table.js';
+import { defineCustomElement as defineSignalTabs } from '@signal-web-ui/core/dist/custom-elements/signal-tabs.js';
 import { defineCustomElement as defineSignalTag } from '@signal-web-ui/core/dist/custom-elements/signal-tag.js';
 import { defineCustomElement as defineSignalText } from '@signal-web-ui/core/dist/custom-elements/signal-text.js';
 import { defineCustomElement as defineSignalTextarea } from '@signal-web-ui/core/dist/custom-elements/signal-textarea.js';
@@ -81,6 +84,34 @@ export class SignalBadge {
 
 
 export declare interface SignalBadge extends Components.SignalBadge {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalBreadcrumbs,
+  inputs: ['items', 'maxItems']
+})
+@Component({
+  selector: 'signal-breadcrumbs',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['items', 'maxItems'],
+  outputs: ['navigate'],
+})
+export class SignalBreadcrumbs {
+  protected el: HTMLSignalBreadcrumbsElement;
+  @Output() navigate = new EventEmitter<CustomEvent<{ id: string }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalBreadcrumbs extends Components.SignalBreadcrumbs {
+
+  navigate: EventEmitter<CustomEvent<{ id: string }>>;
+}
 
 
 @ProxyCmp({
@@ -439,6 +470,34 @@ export declare interface SignalModal extends Components.SignalModal {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalNavbar,
+  inputs: ['activeItem', 'brand', 'collapsed', 'items', 'scrolled']
+})
+@Component({
+  selector: 'signal-navbar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['activeItem', 'brand', 'collapsed', 'items', 'scrolled'],
+  outputs: ['navigate'],
+})
+export class SignalNavbar {
+  protected el: HTMLSignalNavbarElement;
+  @Output() navigate = new EventEmitter<CustomEvent<{ id: string }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalNavbar extends Components.SignalNavbar {
+
+  navigate: EventEmitter<CustomEvent<{ id: string }>>;
+}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalPage,
   inputs: ['description', 'empty', 'error', 'heading', 'loading']
 })
@@ -766,6 +825,34 @@ export declare interface SignalTable extends Components.SignalTable {
   searchChange: EventEmitter<CustomEvent<{ query: string }>>;
 
   filterChange: EventEmitter<CustomEvent<{ filters: Record<string, string> }>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalTabs,
+  inputs: ['activeKey', 'keepAlive', 'lazy', 'orientation', 'tabs', 'validationMap', 'value', 'variant']
+})
+@Component({
+  selector: 'signal-tabs',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['activeKey', 'keepAlive', 'lazy', 'orientation', 'tabs', 'validationMap', 'value', 'variant'],
+  outputs: ['valueChange'],
+})
+export class SignalTabs {
+  protected el: HTMLSignalTabsElement;
+  @Output() valueChange = new EventEmitter<CustomEvent<{ value: string }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalTabs extends Components.SignalTabs {
+
+  valueChange: EventEmitter<CustomEvent<{ value: string }>>;
 }
 
 

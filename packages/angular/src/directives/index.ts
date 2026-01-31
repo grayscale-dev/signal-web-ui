@@ -4,6 +4,7 @@ import * as d from './proxies';
 export const DIRECTIVES = [
   d.SignalAppShell,
   d.SignalBadge,
+  d.SignalBreadcrumbs,
   d.SignalButton,
   d.SignalCard,
   d.SignalCheckbox,
@@ -16,6 +17,7 @@ export const DIRECTIVES = [
   d.SignalLayout,
   d.SignalListItem,
   d.SignalModal,
+  d.SignalNavbar,
   d.SignalPage,
   d.SignalProgress,
   d.SignalRadioGroup,
@@ -28,6 +30,7 @@ export const DIRECTIVES = [
   d.SignalSplitView,
   d.SignalSwitch,
   d.SignalTable,
+  d.SignalTabs,
   d.SignalTag,
   d.SignalText,
   d.SignalTextarea,
