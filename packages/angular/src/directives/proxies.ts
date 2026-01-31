@@ -8,6 +8,7 @@ import type { Components } from '@signal-web-ui/core/dist/custom-elements';
 
 import { defineCustomElement as defineSignalBadge } from '@signal-web-ui/core/dist/custom-elements/signal-badge.js';
 import { defineCustomElement as defineSignalButton } from '@signal-web-ui/core/dist/custom-elements/signal-button.js';
+import { defineCustomElement as defineSignalCheckbox } from '@signal-web-ui/core/dist/custom-elements/signal-checkbox.js';
 import { defineCustomElement as defineSignalCombobox } from '@signal-web-ui/core/dist/custom-elements/signal-combobox.js';
 import { defineCustomElement as defineSignalDataTable } from '@signal-web-ui/core/dist/custom-elements/signal-data-table.js';
 import { defineCustomElement as defineSignalFeatureTable } from '@signal-web-ui/core/dist/custom-elements/signal-feature-table.js';
@@ -17,11 +18,16 @@ import { defineCustomElement as defineSignalInput } from '@signal-web-ui/core/di
 import { defineCustomElement as defineSignalListItem } from '@signal-web-ui/core/dist/custom-elements/signal-list-item.js';
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
 import { defineCustomElement as defineSignalProgress } from '@signal-web-ui/core/dist/custom-elements/signal-progress.js';
+import { defineCustomElement as defineSignalRadioGroup } from '@signal-web-ui/core/dist/custom-elements/signal-radio-group.js';
+import { defineCustomElement as defineSignalSelect } from '@signal-web-ui/core/dist/custom-elements/signal-select.js';
 import { defineCustomElement as defineSignalSkeleton } from '@signal-web-ui/core/dist/custom-elements/signal-skeleton.js';
+import { defineCustomElement as defineSignalSlider } from '@signal-web-ui/core/dist/custom-elements/signal-slider.js';
 import { defineCustomElement as defineSignalSnackbar } from '@signal-web-ui/core/dist/custom-elements/signal-snackbar.js';
+import { defineCustomElement as defineSignalSwitch } from '@signal-web-ui/core/dist/custom-elements/signal-switch.js';
 import { defineCustomElement as defineSignalTable } from '@signal-web-ui/core/dist/custom-elements/signal-table.js';
 import { defineCustomElement as defineSignalTag } from '@signal-web-ui/core/dist/custom-elements/signal-tag.js';
 import { defineCustomElement as defineSignalText } from '@signal-web-ui/core/dist/custom-elements/signal-text.js';
+import { defineCustomElement as defineSignalTextarea } from '@signal-web-ui/core/dist/custom-elements/signal-textarea.js';
 import { defineCustomElement as defineSignalToast } from '@signal-web-ui/core/dist/custom-elements/signal-toast.js';
 import { defineCustomElement as defineSignalTooltip } from '@signal-web-ui/core/dist/custom-elements/signal-tooltip.js';
 @ProxyCmp({
@@ -68,6 +74,34 @@ export class SignalButton {
 
 
 export declare interface SignalButton extends Components.SignalButton {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalCheckbox,
+  inputs: ['checked', 'disabled', 'indeterminate', 'label']
+})
+@Component({
+  selector: 'signal-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['checked', 'disabled', 'indeterminate', 'label'],
+  outputs: ['valueChange'],
+})
+export class SignalCheckbox {
+  protected el: HTMLSignalCheckboxElement;
+  @Output() valueChange = new EventEmitter<CustomEvent<{ checked: boolean }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalCheckbox extends Components.SignalCheckbox {
+
+  valueChange: EventEmitter<CustomEvent<{ checked: boolean }>>;
+}
 
 
 @ProxyCmp({
@@ -352,6 +386,62 @@ export declare interface SignalProgress extends Components.SignalProgress {}
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalRadioGroup,
+  inputs: ['disabled', 'name', 'options', 'value']
+})
+@Component({
+  selector: 'signal-radio-group',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'name', 'options', 'value'],
+  outputs: ['valueChange'],
+})
+export class SignalRadioGroup {
+  protected el: HTMLSignalRadioGroupElement;
+  @Output() valueChange = new EventEmitter<CustomEvent<{ value: string | undefined }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalRadioGroup extends Components.SignalRadioGroup {
+
+  valueChange: EventEmitter<CustomEvent<{ value: string | undefined }>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalSelect,
+  inputs: ['disabled', 'options', 'placeholder', 'value']
+})
+@Component({
+  selector: 'signal-select',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'options', 'placeholder', 'value'],
+  outputs: ['valueChange'],
+})
+export class SignalSelect {
+  protected el: HTMLSignalSelectElement;
+  @Output() valueChange = new EventEmitter<CustomEvent<{ value: string | undefined }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSelect extends Components.SignalSelect {
+
+  valueChange: EventEmitter<CustomEvent<{ value: string | undefined }>>;
+}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalSkeleton,
   inputs: ['description', 'heading', 'lines', 'media', 'variant']
 })
@@ -372,6 +462,34 @@ export class SignalSkeleton {
 
 
 export declare interface SignalSkeleton extends Components.SignalSkeleton {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalSlider,
+  inputs: ['disabled', 'max', 'min', 'mode', 'showValue', 'step', 'value']
+})
+@Component({
+  selector: 'signal-slider',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'max', 'min', 'mode', 'showValue', 'step', 'value'],
+  outputs: ['valueChange'],
+})
+export class SignalSlider {
+  protected el: HTMLSignalSliderElement;
+  @Output() valueChange = new EventEmitter<CustomEvent<{ value: number | [number, number] }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSlider extends Components.SignalSlider {
+
+  valueChange: EventEmitter<CustomEvent<{ value: number | [number, number] }>>;
+}
 
 
 @ProxyCmp({
@@ -402,6 +520,34 @@ export declare interface SignalSnackbar extends Components.SignalSnackbar {
   action: EventEmitter<CustomEvent<void>>;
 
   dismiss: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalSwitch,
+  inputs: ['checked', 'controlId', 'disabled', 'label', 'loading']
+})
+@Component({
+  selector: 'signal-switch',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['checked', 'controlId', 'disabled', 'label', 'loading'],
+  outputs: ['valueChange'],
+})
+export class SignalSwitch {
+  protected el: HTMLSignalSwitchElement;
+  @Output() valueChange = new EventEmitter<CustomEvent<{ checked: boolean }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSwitch extends Components.SignalSwitch {
+
+  valueChange: EventEmitter<CustomEvent<{ checked: boolean }>>;
 }
 
 
@@ -491,6 +637,34 @@ export class SignalText {
 
 
 export declare interface SignalText extends Components.SignalText {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalTextarea,
+  inputs: ['autoResize', 'defaultValue', 'disabled', 'maxLength', 'placeholder', 'rows', 'validationState', 'value']
+})
+@Component({
+  selector: 'signal-textarea',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['autoResize', 'defaultValue', 'disabled', 'maxLength', 'placeholder', 'rows', 'validationState', 'value'],
+  outputs: ['valueChange'],
+})
+export class SignalTextarea {
+  protected el: HTMLSignalTextareaElement;
+  @Output() valueChange = new EventEmitter<CustomEvent<{ value: string }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalTextarea extends Components.SignalTextarea {
+
+  valueChange: EventEmitter<CustomEvent<{ value: string }>>;
+}
 
 
 @ProxyCmp({

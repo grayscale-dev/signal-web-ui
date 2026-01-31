@@ -26,6 +26,17 @@ export const SignalButton: StencilVueComponent<JSX.SignalButton> = /*@__PURE__*/
 ]);
 
 
+export const SignalCheckbox: StencilVueComponent<JSX.SignalCheckbox> = /*@__PURE__*/ defineContainer<JSX.SignalCheckbox>('signal-checkbox', undefined, [
+  'checked',
+  'indeterminate',
+  'disabled',
+  'label',
+  'valueChange'
+], [
+  'valueChange'
+]);
+
+
 export const SignalCombobox: StencilVueComponent<JSX.SignalCombobox> = /*@__PURE__*/ defineContainer<JSX.SignalCombobox>('signal-combobox', undefined, [
   'options',
   'value',
@@ -186,12 +197,48 @@ export const SignalProgress: StencilVueComponent<JSX.SignalProgress> = /*@__PURE
 ]);
 
 
+export const SignalRadioGroup: StencilVueComponent<JSX.SignalRadioGroup> = /*@__PURE__*/ defineContainer<JSX.SignalRadioGroup>('signal-radio-group', undefined, [
+  'options',
+  'value',
+  'disabled',
+  'name',
+  'valueChange'
+], [
+  'valueChange'
+]);
+
+
+export const SignalSelect: StencilVueComponent<JSX.SignalSelect> = /*@__PURE__*/ defineContainer<JSX.SignalSelect>('signal-select', undefined, [
+  'options',
+  'placeholder',
+  'value',
+  'disabled',
+  'valueChange'
+], [
+  'valueChange'
+]);
+
+
 export const SignalSkeleton: StencilVueComponent<JSX.SignalSkeleton> = /*@__PURE__*/ defineContainer<JSX.SignalSkeleton>('signal-skeleton', undefined, [
   'variant',
   'lines',
   'media',
   'heading',
   'description'
+]);
+
+
+export const SignalSlider: StencilVueComponent<JSX.SignalSlider> = /*@__PURE__*/ defineContainer<JSX.SignalSlider>('signal-slider', undefined, [
+  'mode',
+  'value',
+  'min',
+  'max',
+  'step',
+  'showValue',
+  'disabled',
+  'valueChange'
+], [
+  'valueChange'
 ]);
 
 
@@ -206,6 +253,18 @@ export const SignalSnackbar: StencilVueComponent<JSX.SignalSnackbar> = /*@__PURE
 ], [
   'action',
   'dismiss'
+]);
+
+
+export const SignalSwitch: StencilVueComponent<JSX.SignalSwitch> = /*@__PURE__*/ defineContainer<JSX.SignalSwitch>('signal-switch', undefined, [
+  'checked',
+  'disabled',
+  'loading',
+  'label',
+  'controlId',
+  'valueChange'
+], [
+  'valueChange'
 ]);
 
 
@@ -247,6 +306,21 @@ export const SignalTag: StencilVueComponent<JSX.SignalTag> = /*@__PURE__*/ defin
 export const SignalText: StencilVueComponent<JSX.SignalText> = /*@__PURE__*/ defineContainer<JSX.SignalText>('signal-text', undefined, [
   'truncate',
   'clampLines'
+]);
+
+
+export const SignalTextarea: StencilVueComponent<JSX.SignalTextarea> = /*@__PURE__*/ defineContainer<JSX.SignalTextarea>('signal-textarea', undefined, [
+  'value',
+  'defaultValue',
+  'rows',
+  'autoResize',
+  'maxLength',
+  'placeholder',
+  'disabled',
+  'validationState',
+  'valueChange'
+], [
+  'valueChange'
 ]);
 
 

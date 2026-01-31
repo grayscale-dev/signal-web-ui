@@ -9,6 +9,12 @@ export type {
   SignalSnackbarCustomEvent,
   SignalTagCustomEvent,
   SignalToastCustomEvent,
+  SignalCheckboxCustomEvent,
+  SignalSwitchCustomEvent,
+  SignalSelectCustomEvent,
+  SignalSliderCustomEvent,
+  SignalRadioGroupCustomEvent,
+  SignalTextareaCustomEvent,
   SignalModalCustomEvent,
   SignalTableCustomEvent
 } from "./components";

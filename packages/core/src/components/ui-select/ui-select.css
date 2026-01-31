@@ -1,0 +1,34 @@
+:host {
+  display: inline-block;
+  min-width: 160px;
+}
+
+.root {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  padding: 10px 32px 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--signal-border, #e5e7eb);
+  background: var(--signal-surface, #ffffff);
+  color: var(--signal-text, #111827);
+  appearance: none;
+  font-size: 0.95rem;
+}
+
+.select:focus-visible {
+  outline: 2px solid var(--signal-accent, #2563eb);
+  outline-offset: 2px;
+}
+
+.chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--signal-subtle, #6b7280);
+  pointer-events: none;
+}

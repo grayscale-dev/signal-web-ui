@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--signal-border, #e5e7eb);
+  background: var(--signal-surface, #ffffff);
+  color: var(--signal-text, #111827);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.textarea:focus-visible {
+  outline: 2px solid var(--signal-accent, #2563eb);
+  outline-offset: 2px;
+}
+
+.textarea.invalid {
+  border-color: var(--signal-danger, #ef4444);
+}
+
+.textarea.success {
+  border-color: var(--signal-success, #16a34a);
+}

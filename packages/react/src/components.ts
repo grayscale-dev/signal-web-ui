@@ -6,6 +6,7 @@
 /* eslint-disable */
 export { SignalBadge } from "./signal-badge.js";
 export { SignalButton } from "./signal-button.js";
+export { SignalCheckbox } from "./signal-checkbox.js";
 export { SignalCombobox } from "./signal-combobox.js";
 export { SignalDataTable } from "./signal-data-table.js";
 export { SignalFeatureTable } from "./signal-feature-table.js";
@@ -15,10 +16,15 @@ export { SignalInput } from "./signal-input.js";
 export { SignalListItem } from "./signal-list-item.js";
 export { SignalModal } from "./signal-modal.js";
 export { SignalProgress } from "./signal-progress.js";
+export { SignalRadioGroup } from "./signal-radio-group.js";
+export { SignalSelect } from "./signal-select.js";
 export { SignalSkeleton } from "./signal-skeleton.js";
+export { SignalSlider } from "./signal-slider.js";
 export { SignalSnackbar } from "./signal-snackbar.js";
+export { SignalSwitch } from "./signal-switch.js";
 export { SignalTable } from "./signal-table.js";
 export { SignalTag } from "./signal-tag.js";
 export { SignalText } from "./signal-text.js";
+export { SignalTextarea } from "./signal-textarea.js";
 export { SignalToast } from "./signal-toast.js";
 export { SignalTooltip } from "./signal-tooltip.js";
