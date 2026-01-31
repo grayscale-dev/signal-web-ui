@@ -2,6 +2,7 @@
 import * as d from './proxies';
 
 export const DIRECTIVES = [
+  d.SignalBadge,
   d.SignalButton,
   d.SignalCombobox,
   d.SignalDataTable,
@@ -11,8 +12,12 @@ export const DIRECTIVES = [
   d.SignalInput,
   d.SignalListItem,
   d.SignalModal,
+  d.SignalProgress,
   d.SignalSkeleton,
+  d.SignalSnackbar,
   d.SignalTable,
+  d.SignalTag,
   d.SignalText,
+  d.SignalToast,
   d.SignalTooltip
 ];

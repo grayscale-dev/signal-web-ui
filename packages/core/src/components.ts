@@ -5,6 +5,11 @@ export interface Components {
   SignalDataTable: Record<string, never>;
   SignalFeatureTable: Record<string, never>;
   SignalFileUpload: Record<string, never>;
+  SignalBadge: Record<string, never>;
+  SignalTag: Record<string, never>;
+  SignalProgress: Record<string, never>;
+  SignalSnackbar: Record<string, never>;
+  SignalToast: Record<string, never>;
   SignalHeading: Record<string, never>;
   SignalListItem: Record<string, never>;
   SignalSkeleton: Record<string, never>;
@@ -22,6 +27,11 @@ export interface JSX {
     "signal-data-table": Record<string, unknown>;
     "signal-feature-table": Record<string, unknown>;
     "signal-file-upload": Record<string, unknown>;
+    "signal-badge": Record<string, unknown>;
+    "signal-tag": Record<string, unknown>;
+    "signal-progress": Record<string, unknown>;
+    "signal-snackbar": Record<string, unknown>;
+    "signal-toast": Record<string, unknown>;
     "signal-heading": Record<string, unknown>;
     "signal-list-item": Record<string, unknown>;
     "signal-skeleton": Record<string, unknown>;
@@ -57,6 +67,20 @@ export interface SignalListItemCustomEvent<T> extends CustomEvent<T> {
   target: HTMLElement;
 }
 
+export interface SignalTagCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalSnackbarCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalToastCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
 export interface SignalFileUploadCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLElement;

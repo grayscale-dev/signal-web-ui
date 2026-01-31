@@ -10,6 +10,13 @@ import { defineCustomElements } from '@signal-web-ui/core/loader';
 
 defineCustomElements();
 
+export const SignalBadge: StencilVueComponent<JSX.SignalBadge> = /*@__PURE__*/ defineContainer<JSX.SignalBadge>('signal-badge', undefined, [
+  'tone',
+  'soft',
+  'size'
+]);
+
+
 export const SignalButton: StencilVueComponent<JSX.SignalButton> = /*@__PURE__*/ defineContainer<JSX.SignalButton>('signal-button', undefined, [
   'variant',
   'size',
@@ -167,12 +174,38 @@ export const SignalModal: StencilVueComponent<JSX.SignalModal> = /*@__PURE__*/ d
 ]);
 
 
+export const SignalProgress: StencilVueComponent<JSX.SignalProgress> = /*@__PURE__*/ defineContainer<JSX.SignalProgress>('signal-progress', undefined, [
+  'value',
+  'max',
+  'indeterminate',
+  'type',
+  'label',
+  'showValue',
+  'state',
+  'size'
+]);
+
+
 export const SignalSkeleton: StencilVueComponent<JSX.SignalSkeleton> = /*@__PURE__*/ defineContainer<JSX.SignalSkeleton>('signal-skeleton', undefined, [
   'variant',
   'lines',
   'media',
   'heading',
   'description'
+]);
+
+
+export const SignalSnackbar: StencilVueComponent<JSX.SignalSnackbar> = /*@__PURE__*/ defineContainer<JSX.SignalSnackbar>('signal-snackbar', undefined, [
+  'message',
+  'tone',
+  'duration',
+  'actionLabel',
+  'open',
+  'action',
+  'dismiss'
+], [
+  'action',
+  'dismiss'
 ]);
 
 
@@ -199,9 +232,38 @@ export const SignalTable: StencilVueComponent<JSX.SignalTable> = /*@__PURE__*/ d
 ]);
 
 
+export const SignalTag: StencilVueComponent<JSX.SignalTag> = /*@__PURE__*/ defineContainer<JSX.SignalTag>('signal-tag', undefined, [
+  'label',
+  'tone',
+  'size',
+  'removable',
+  'disabled',
+  'remove'
+], [
+  'remove'
+]);
+
+
 export const SignalText: StencilVueComponent<JSX.SignalText> = /*@__PURE__*/ defineContainer<JSX.SignalText>('signal-text', undefined, [
   'truncate',
   'clampLines'
+]);
+
+
+export const SignalToast: StencilVueComponent<JSX.SignalToast> = /*@__PURE__*/ defineContainer<JSX.SignalToast>('signal-toast', undefined, [
+  'tone',
+  'heading',
+  'message',
+  'description',
+  'actionLabel',
+  'dismissible',
+  'open',
+  'duration',
+  'action',
+  'dismiss'
+], [
+  'action',
+  'dismiss'
 ]);
 
 

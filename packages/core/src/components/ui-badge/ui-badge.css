@@ -1,0 +1,87 @@
+:host {
+  display: inline-block;
+}
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.icon:empty {
+  display: none;
+}
+
+.size-sm {
+  padding: 2px 6px;
+  font-size: 10px;
+}
+
+.size-md {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.size-lg {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.tone-neutral {
+  background: var(--signal-muted, #f3f4f6);
+  color: var(--signal-text, #111827);
+  border-color: var(--signal-border, #e5e7eb);
+}
+
+.tone-accent {
+  background: color-mix(in srgb, var(--signal-accent, #2563eb) 12%, transparent);
+  color: var(--signal-accent, #2563eb);
+  border-color: color-mix(in srgb, var(--signal-accent, #2563eb) 35%, transparent);
+}
+
+.tone-success {
+  background: color-mix(in srgb, var(--signal-success, #16a34a) 12%, transparent);
+  color: var(--signal-success, #16a34a);
+  border-color: color-mix(in srgb, var(--signal-success, #16a34a) 35%, transparent);
+}
+
+.tone-warning {
+  background: color-mix(in srgb, var(--signal-warning, #f59e0b) 12%, transparent);
+  color: var(--signal-warning, #b45309);
+  border-color: color-mix(in srgb, var(--signal-warning, #f59e0b) 35%, transparent);
+}
+
+.tone-danger {
+  background: color-mix(in srgb, var(--signal-danger, #ef4444) 12%, transparent);
+  color: var(--signal-danger, #b91c1c);
+  border-color: color-mix(in srgb, var(--signal-danger, #ef4444) 35%, transparent);
+}
+
+.root:not(.soft) {
+  color: #fff;
+}
+
+.root:not(.soft).tone-neutral {
+  background: var(--signal-text, #111827);
+  color: var(--signal-surface, #ffffff);
+}
+
+.root:not(.soft).tone-accent {
+  background: var(--signal-accent, #2563eb);
+}
+
+.root:not(.soft).tone-success {
+  background: var(--signal-success, #16a34a);
+}
+
+.root:not(.soft).tone-warning {
+  background: var(--signal-warning, #f59e0b);
+}
+
+.root:not(.soft).tone-danger {
+  background: var(--signal-danger, #ef4444);
+}

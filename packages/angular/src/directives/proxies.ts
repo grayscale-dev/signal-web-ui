@@ -6,6 +6,7 @@ import { ProxyCmp } from './angular-component-lib/utils';
 
 import type { Components } from '@signal-web-ui/core/dist/custom-elements';
 
+import { defineCustomElement as defineSignalBadge } from '@signal-web-ui/core/dist/custom-elements/signal-badge.js';
 import { defineCustomElement as defineSignalButton } from '@signal-web-ui/core/dist/custom-elements/signal-button.js';
 import { defineCustomElement as defineSignalCombobox } from '@signal-web-ui/core/dist/custom-elements/signal-combobox.js';
 import { defineCustomElement as defineSignalDataTable } from '@signal-web-ui/core/dist/custom-elements/signal-data-table.js';
@@ -15,10 +16,37 @@ import { defineCustomElement as defineSignalHeading } from '@signal-web-ui/core/
 import { defineCustomElement as defineSignalInput } from '@signal-web-ui/core/dist/custom-elements/signal-input.js';
 import { defineCustomElement as defineSignalListItem } from '@signal-web-ui/core/dist/custom-elements/signal-list-item.js';
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
+import { defineCustomElement as defineSignalProgress } from '@signal-web-ui/core/dist/custom-elements/signal-progress.js';
 import { defineCustomElement as defineSignalSkeleton } from '@signal-web-ui/core/dist/custom-elements/signal-skeleton.js';
+import { defineCustomElement as defineSignalSnackbar } from '@signal-web-ui/core/dist/custom-elements/signal-snackbar.js';
 import { defineCustomElement as defineSignalTable } from '@signal-web-ui/core/dist/custom-elements/signal-table.js';
+import { defineCustomElement as defineSignalTag } from '@signal-web-ui/core/dist/custom-elements/signal-tag.js';
 import { defineCustomElement as defineSignalText } from '@signal-web-ui/core/dist/custom-elements/signal-text.js';
+import { defineCustomElement as defineSignalToast } from '@signal-web-ui/core/dist/custom-elements/signal-toast.js';
 import { defineCustomElement as defineSignalTooltip } from '@signal-web-ui/core/dist/custom-elements/signal-tooltip.js';
+@ProxyCmp({
+  defineCustomElementFn: defineSignalBadge,
+  inputs: ['size', 'soft', 'tone']
+})
+@Component({
+  selector: 'signal-badge',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['size', 'soft', 'tone'],
+})
+export class SignalBadge {
+  protected el: HTMLSignalBadgeElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalBadge extends Components.SignalBadge {}
+
+
 @ProxyCmp({
   defineCustomElementFn: defineSignalButton,
   inputs: ['disabled', 'loading', 'size', 'type', 'variant']
@@ -301,6 +329,29 @@ export declare interface SignalModal extends Components.SignalModal {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalProgress,
+  inputs: ['indeterminate', 'label', 'max', 'showValue', 'size', 'state', 'type', 'value']
+})
+@Component({
+  selector: 'signal-progress',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['indeterminate', 'label', 'max', 'showValue', 'size', 'state', 'type', 'value'],
+})
+export class SignalProgress {
+  protected el: HTMLSignalProgressElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalProgress extends Components.SignalProgress {}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalSkeleton,
   inputs: ['description', 'heading', 'lines', 'media', 'variant']
 })
@@ -321,6 +372,37 @@ export class SignalSkeleton {
 
 
 export declare interface SignalSkeleton extends Components.SignalSkeleton {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalSnackbar,
+  inputs: ['actionLabel', 'duration', 'message', 'open', 'tone']
+})
+@Component({
+  selector: 'signal-snackbar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['actionLabel', 'duration', { name: 'message', required: true }, 'open', 'tone'],
+  outputs: ['action', 'dismiss'],
+})
+export class SignalSnackbar {
+  protected el: HTMLSignalSnackbarElement;
+  @Output() action = new EventEmitter<CustomEvent<void>>();
+  @Output() dismiss = new EventEmitter<CustomEvent<void>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSnackbar extends Components.SignalSnackbar {
+
+  action: EventEmitter<CustomEvent<void>>;
+
+  dismiss: EventEmitter<CustomEvent<void>>;
+}
 
 
 @ProxyCmp({
@@ -361,6 +443,34 @@ export declare interface SignalTable extends Components.SignalTable {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalTag,
+  inputs: ['disabled', 'label', 'removable', 'size', 'tone']
+})
+@Component({
+  selector: 'signal-tag',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', { name: 'label', required: true }, 'removable', 'size', 'tone'],
+  outputs: ['remove'],
+})
+export class SignalTag {
+  protected el: HTMLSignalTagElement;
+  @Output() remove = new EventEmitter<CustomEvent<void>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalTag extends Components.SignalTag {
+
+  remove: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalText,
   inputs: ['clampLines', 'truncate']
 })
@@ -381,6 +491,37 @@ export class SignalText {
 
 
 export declare interface SignalText extends Components.SignalText {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalToast,
+  inputs: ['actionLabel', 'description', 'dismissible', 'duration', 'heading', 'message', 'open', 'tone']
+})
+@Component({
+  selector: 'signal-toast',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['actionLabel', 'description', 'dismissible', 'duration', 'heading', { name: 'message', required: true }, 'open', 'tone'],
+  outputs: ['action', 'dismiss'],
+})
+export class SignalToast {
+  protected el: HTMLSignalToastElement;
+  @Output() action = new EventEmitter<CustomEvent<void>>();
+  @Output() dismiss = new EventEmitter<CustomEvent<void>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalToast extends Components.SignalToast {
+
+  action: EventEmitter<CustomEvent<void>>;
+
+  dismiss: EventEmitter<CustomEvent<void>>;
+}
 
 
 @ProxyCmp({
