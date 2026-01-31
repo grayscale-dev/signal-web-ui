@@ -24,5 +24,6 @@ export type {
   SignalTableCustomEvent,
   SignalDrawerCustomEvent,
   SignalDropdownCustomEvent,
-  SignalPopoverCustomEvent
+  SignalPopoverCustomEvent,
+  SignalAccessibilityHelpersCustomEvent
 } from "./components";

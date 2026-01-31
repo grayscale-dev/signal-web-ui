@@ -4,8 +4,10 @@
  */
 
 /* eslint-disable */
+export { SignalAccessibilityHelpers } from "./signal-accessibility-helpers.js";
 export { SignalAppShell } from "./signal-app-shell.js";
 export { SignalBadge } from "./signal-badge.js";
+export { SignalBehavioralPrimitives } from "./signal-behavioral-primitives.js";
 export { SignalBreadcrumbs } from "./signal-breadcrumbs.js";
 export { SignalButton } from "./signal-button.js";
 export { SignalCard } from "./signal-card.js";
@@ -26,6 +28,7 @@ export { SignalPage } from "./signal-page.js";
 export { SignalPopover } from "./signal-popover.js";
 export { SignalProgress } from "./signal-progress.js";
 export { SignalRadioGroup } from "./signal-radio-group.js";
+export { SignalResponsiveConfig } from "./signal-responsive-config.js";
 export { SignalSection } from "./signal-section.js";
 export { SignalSelect } from "./signal-select.js";
 export { SignalSidebar } from "./signal-sidebar.js";

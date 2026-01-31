@@ -6,8 +6,10 @@ import { ProxyCmp } from './angular-component-lib/utils';
 
 import type { Components } from '@signal-web-ui/core/dist/custom-elements';
 
+import { defineCustomElement as defineSignalAccessibilityHelpers } from '@signal-web-ui/core/dist/custom-elements/signal-accessibility-helpers.js';
 import { defineCustomElement as defineSignalAppShell } from '@signal-web-ui/core/dist/custom-elements/signal-app-shell.js';
 import { defineCustomElement as defineSignalBadge } from '@signal-web-ui/core/dist/custom-elements/signal-badge.js';
+import { defineCustomElement as defineSignalBehavioralPrimitives } from '@signal-web-ui/core/dist/custom-elements/signal-behavioral-primitives.js';
 import { defineCustomElement as defineSignalBreadcrumbs } from '@signal-web-ui/core/dist/custom-elements/signal-breadcrumbs.js';
 import { defineCustomElement as defineSignalButton } from '@signal-web-ui/core/dist/custom-elements/signal-button.js';
 import { defineCustomElement as defineSignalCard } from '@signal-web-ui/core/dist/custom-elements/signal-card.js';
@@ -28,6 +30,7 @@ import { defineCustomElement as defineSignalPage } from '@signal-web-ui/core/dis
 import { defineCustomElement as defineSignalPopover } from '@signal-web-ui/core/dist/custom-elements/signal-popover.js';
 import { defineCustomElement as defineSignalProgress } from '@signal-web-ui/core/dist/custom-elements/signal-progress.js';
 import { defineCustomElement as defineSignalRadioGroup } from '@signal-web-ui/core/dist/custom-elements/signal-radio-group.js';
+import { defineCustomElement as defineSignalResponsiveConfig } from '@signal-web-ui/core/dist/custom-elements/signal-responsive-config.js';
 import { defineCustomElement as defineSignalSection } from '@signal-web-ui/core/dist/custom-elements/signal-section.js';
 import { defineCustomElement as defineSignalSelect } from '@signal-web-ui/core/dist/custom-elements/signal-select.js';
 import { defineCustomElement as defineSignalSidebar } from '@signal-web-ui/core/dist/custom-elements/signal-sidebar.js';
@@ -43,6 +46,34 @@ import { defineCustomElement as defineSignalText } from '@signal-web-ui/core/dis
 import { defineCustomElement as defineSignalTextarea } from '@signal-web-ui/core/dist/custom-elements/signal-textarea.js';
 import { defineCustomElement as defineSignalToast } from '@signal-web-ui/core/dist/custom-elements/signal-toast.js';
 import { defineCustomElement as defineSignalTooltip } from '@signal-web-ui/core/dist/custom-elements/signal-tooltip.js';
+@ProxyCmp({
+  defineCustomElementFn: defineSignalAccessibilityHelpers,
+  inputs: ['ariaLabels', 'focusVisible', 'returnFocus', 'shortcutMap', 'trapFocus']
+})
+@Component({
+  selector: 'signal-accessibility-helpers',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['ariaLabels', 'focusVisible', 'returnFocus', 'shortcutMap', 'trapFocus'],
+  outputs: ['shortcut'],
+})
+export class SignalAccessibilityHelpers {
+  protected el: HTMLSignalAccessibilityHelpersElement;
+  @Output() shortcut = new EventEmitter<CustomEvent<{ combo: string }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalAccessibilityHelpers extends Components.SignalAccessibilityHelpers {
+
+  shortcut: EventEmitter<CustomEvent<{ combo: string }>>;
+}
+
+
 @ProxyCmp({
   defineCustomElementFn: defineSignalAppShell,
   inputs: ['padded']
@@ -87,6 +118,29 @@ export class SignalBadge {
 
 
 export declare interface SignalBadge extends Components.SignalBadge {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalBehavioralPrimitives,
+  inputs: ['enabled', 'lockScroll', 'restoreFocus']
+})
+@Component({
+  selector: 'signal-behavioral-primitives',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['enabled', 'lockScroll', 'restoreFocus'],
+})
+export class SignalBehavioralPrimitives {
+  protected el: HTMLSignalBehavioralPrimitivesElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalBehavioralPrimitives extends Components.SignalBehavioralPrimitives {}
 
 
 @ProxyCmp({
@@ -673,6 +727,29 @@ export declare interface SignalRadioGroup extends Components.SignalRadioGroup {
 
   valueChange: EventEmitter<CustomEvent<{ value: string | undefined }>>;
 }
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalResponsiveConfig,
+  inputs: ['breakpoints', 'hostClass', 'zIndexScale']
+})
+@Component({
+  selector: 'signal-responsive-config',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['breakpoints', 'hostClass', 'zIndexScale'],
+})
+export class SignalResponsiveConfig {
+  protected el: HTMLSignalResponsiveConfigElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalResponsiveConfig extends Components.SignalResponsiveConfig {}
 
 
 @ProxyCmp({

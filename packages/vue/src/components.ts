@@ -10,6 +10,18 @@ import { defineCustomElements } from '@signal-web-ui/core/loader';
 
 defineCustomElements();
 
+export const SignalAccessibilityHelpers: StencilVueComponent<JSX.SignalAccessibilityHelpers> = /*@__PURE__*/ defineContainer<JSX.SignalAccessibilityHelpers>('signal-accessibility-helpers', undefined, [
+  'focusVisible',
+  'shortcutMap',
+  'ariaLabels',
+  'trapFocus',
+  'returnFocus',
+  'shortcut'
+], [
+  'shortcut'
+]);
+
+
 export const SignalAppShell: StencilVueComponent<JSX.SignalAppShell> = /*@__PURE__*/ defineContainer<JSX.SignalAppShell>('signal-app-shell', undefined, [
   'padded'
 ]);
@@ -19,6 +31,13 @@ export const SignalBadge: StencilVueComponent<JSX.SignalBadge> = /*@__PURE__*/ d
   'tone',
   'soft',
   'size'
+]);
+
+
+export const SignalBehavioralPrimitives: StencilVueComponent<JSX.SignalBehavioralPrimitives> = /*@__PURE__*/ defineContainer<JSX.SignalBehavioralPrimitives>('signal-behavioral-primitives', undefined, [
+  'enabled',
+  'lockScroll',
+  'restoreFocus'
 ]);
 
 
@@ -313,6 +332,13 @@ export const SignalRadioGroup: StencilVueComponent<JSX.SignalRadioGroup> = /*@__
   'valueChange'
 ], [
   'valueChange'
+]);
+
+
+export const SignalResponsiveConfig: StencilVueComponent<JSX.SignalResponsiveConfig> = /*@__PURE__*/ defineContainer<JSX.SignalResponsiveConfig>('signal-responsive-config', undefined, [
+  'breakpoints',
+  'zIndexScale',
+  'hostClass'
 ]);
 
 

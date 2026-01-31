@@ -36,6 +36,9 @@ export interface Components {
   SignalDrawer: Record<string, never>;
   SignalDropdown: Record<string, never>;
   SignalPopover: Record<string, never>;
+  SignalAccessibilityHelpers: Record<string, never>;
+  SignalBehavioralPrimitives: Record<string, never>;
+  SignalResponsiveConfig: Record<string, never>;
 }
 
 export interface JSX {
@@ -77,6 +80,9 @@ export interface JSX {
     "signal-drawer": Record<string, unknown>;
     "signal-dropdown": Record<string, unknown>;
     "signal-popover": Record<string, unknown>;
+    "signal-accessibility-helpers": Record<string, unknown>;
+    "signal-behavioral-primitives": Record<string, unknown>;
+    "signal-responsive-config": Record<string, unknown>;
   };
 }
 
@@ -200,6 +206,11 @@ export interface SignalDropdownCustomEvent<T> extends CustomEvent<T> {
 }
 
 export interface SignalPopoverCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLElement;
+}
+
+export interface SignalAccessibilityHelpersCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLElement;
 }
