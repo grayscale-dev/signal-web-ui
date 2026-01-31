@@ -1,5 +1,7 @@
 # @signal-web-ui/tsconfig
 
+## 0.1.12
+
 ## 0.1.11
 
 ### Patch Changes
